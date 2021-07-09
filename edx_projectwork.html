@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>Simple Interest Calculator</title>
+<link rel="stylesheet" href="style.css">   <!--External Style Sheet-->
+<style>  
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+</style>
+</head>
+<body style="height:200px;background-image: linear-gradient(#dd99ff,#80ffdf,#ffc266);">
+<header>
+    <div class="container">
+	<p style="position:absolute;margin-top:5px;margin-left:5px;font-family:monotype corsiva;font-size:50">NGO Service</p>
+      <nav>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    </header>
+    <h1> <p style="top:95px;position:absolute;margin-left:550px;font-family:monotype corsiva;font-size:30">Simple Interest Calculator</p></h1>
+   <form method="post" action="" name="panel" id="chang1">
+   <div style="top:30px;position:absolute;font-family:monotype corsiva;font-size:20">Amount</div> <input type="text" style="position:absolute;top:30px;margin-left:490px" id="principal" name="principal">
+   <div style="top:90px;position:absolute;font-family:monotype corsiva;font-size:20">Interest Rate</div><input type="range" style="position:absolute;top:90px;margin-left:490px" name="rate" min="1" max="10" step="0.5" id="myRange">
+    <div style="position:absolute;top:90px;margin-left:630px" >Current Rate: </div><span id="demo" style="position:absolute;top:90px;margin-left:750px"></span></p>
+   <label for="Year" style="top:150px;position:absolute;font-family:monotype corsiva;font-size:20">No of Year</label>
+   <select style="position:absolute;top:150px;margin-left:490px" name="year" id="year">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+  </select>
+    <hr style="position:absolute;top:200px;">
+   <center><input style="top:210px;position:absolute;font-family:monotype corsiva;font-size:20" TYPE="button" NAME="button" Value="Compute Interest" class="button" onClick="testResults(this.form)"></center>
+   <span id="result" style="top:290px;position:absolute;font-family:monotype corsiva;font-size:20"></span>
+</form>
+<SCRIPT LANGUAGE="JavaScript">
+function testResults (form) {
+    var principal = parseInt(form.principal.value);
+    var rate=form.rate.value;
+    var years = form.year.value;
+    var interest = principal * years * rate /100;
+    var year = new Date().getFullYear()+parseInt(years);
+    //display the result
+    document.getElementById("result").innerHTML= "If you Deposit"
+    +" "+principal+" at an interest rate of interest of"+" "+rate+", you will recieve an amount of "+interest+" in the year"+" "+year; 
+}
+
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</SCRIPT>
+<div style="top:650px;position:absolute;">&#169; This Calculator is under Grace Inc.</div>
+</body>
+</html>
